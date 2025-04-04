@@ -1,0 +1,23 @@
+echo "Updating Cargo.toml to use a compatible version of stylus-sdk..."
+cat > Cargo.toml << EOF
+[package]
+name = "arbi-proof"  # Changed to match the directory name
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+stylus-sdk = "0.8.3"
+sha3 = "0.10.8"
+hex-literal = "0.4.1"
+alloc-stdlib = "0.2.2"
+
+[lib]
+crate-type = ["cdylib"]
+
+[profile.release]
+codegen-units = 1
+strip = true
+lto = true
+panic = "abort"
+opt-level = "z"
+EOF

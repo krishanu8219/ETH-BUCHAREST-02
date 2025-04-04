@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Get ETH Address</title>
+    <script src="https://cdn.ethers.io/lib/ethers-5.7.2.umd.min.js" 
+            type="application/javascript"></script>
+</head>
+<body>
+    <h2>Get Ethereum Address from Private Key</h2>
+    <p>Your private key: 7c1cc5e5858657744e359f67f7c3b0694390875a401c2ba7a6bd579c5a756524</p>
+    <button onclick="getAddress()">Get Address</button>
+    <p>Your address: <span id="address">Click button to generate</span></p>
+    
+    <script>
+        function getAddress() {
+            try {
+                const privateKey = "7c1cc5e5858657744e359f67f7c3b0694390875a401c2ba7a6bd579c5a756524";
+                const wallet = new ethers.Wallet("0x" + privateKey);
+                document.getElementById("address").textContent = wallet.address;
+            } catch(e) {
+                document.getElementById("address").textContent = "Error: " + e.message;
+            }
+        }
+    </script>
+</body>
+</html>

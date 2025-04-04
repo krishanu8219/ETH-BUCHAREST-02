@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ethereum Address Generator</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; }
+        input { width: 100%; padding: 8px; margin: 8px 0; }
+        button { padding: 10px; background: #4CAF50; color: white; border: none; cursor: pointer; }
+        #result { margin-top: 20px; padding: 15px; border: 1px solid #ddd; display: none; }
+    </style>
+</head>
+<body>
+    <h1>Ethereum Address Generator</h1>
+    <p>Enter your private key to generate your Ethereum address.</p>
+    
+    <input type="text" id="privateKey" placeholder="Enter your private key (without 0x prefix)" />
+    <button onclick="generateAddress()">Generate Address</button>
+    
+    <div id="result"></div>
+    
+    <script src="https://cdn.ethers.io/lib/ethers-5.7.0.umd.min.js" 
+            integrity="sha384-7yws2HYKn7/WG+nW93K/j+Bm8Z/HwQ1BYJ2WOAz+J5YWxTxvbRyXWimFnTZU6X/" 
+            crossorigin="anonymous"></script>
+    <script>
+        async function generateAddress() {
+            const resultDiv = document.getElementById('result');
+            resultDiv.style.display = 'block';
+            
+            try {
+                const privateKeyInput = document.getElementById('privateKey').value.trim();
+                if (!privateKeyInput) {
+                    throw new Error('Please enter a private key');
+                }
+                
+                // Add 0x prefix if missing
+                const privateKey = privateKeyInput.startsWith('0x') ? privateKeyInput : '0x' + privateKeyInput;
+                
+                // Create wallet from private key
+                const wallet = new ethers.Wallet(privateKey);
+                
+                resultDiv.innerHTML = `
+                    <h3>Results:</h3>
+                    <p><strong>Your Ethereum Address:</strong></p>
+                    <p>${wallet.address}</p>
+                    <p>Use this address to get testnet ETH from:</p>
+                    <p><a href="https://www.alchemy.com/faucets/arbitrum-sepolia" target="_blank">
+                        Arbitrum Sepolia Faucet
+                    </a></p>
+                `;
+            } catch (error) {
+                resultDiv.innerHTML = `
+                    <h3>Error:</h3>
+                    <p>${error.message}</p>
+                    <p>Make sure you've entered a valid private key.</p>
+                `;
+            }
+        }
+    </script>
+</body>
+</html>

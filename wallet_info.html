@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ethereum Wallet Info</title>
+    <script src="https://cdn.ethers.io/lib/ethers-5.7.2.umd.min.js" 
+            type="application/javascript"></script>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; }
+        .info-box { border: 1px solid #ddd; padding: 15px; margin: 15px 0; border-radius: 5px; }
+        .address { font-weight: bold; color: #2c3e50; word-break: break-all; }
+    </style>
+</head>
+<body>
+    <h2>Your Ethereum Wallet Information</h2>
+    
+    <div class="info-box">
+        <h3>Your Wallet Address</h3>
+        <p class="address">0xa7627848d84213ef697b436aa85637d70d5bf219</p>
+    </div>
+    
+    <div class="info-box">
+        <h3>Your Private Key (Keep Secret!)</h3>
+        <p class="address">7c1cc5e5858657744e359f67f7c3b0694390875a401c2ba7a6bd579c5a756524</p>
+    </div>
+    
+    <div class="info-box">
+        <h3>Next Steps</h3>
+        <p>1. Get testnet ETH from <a href="https://www.alchemy.com/faucets/arbitrum-sepolia" target="_blank">Arbitrum Sepolia Faucet</a></p>
+        <p>2. Run the deployment script: <code>./deploy_contract.sh</code></p>
+    </div>
+</body>
+</html>
