@@ -1,0 +1,3 @@
+// This file uses the .cjs extension to indicate it's a CommonJS module
+const { ethers } = require('ethers');
+// ...existing code from original test_arbiproof.js...

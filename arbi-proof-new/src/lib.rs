@@ -1,6 +1,9 @@
 #![no_std]
 extern crate alloc;
 
+#[macro_use]
+extern crate stylus_sdk;
+
 // Re-export alloy_primitives at crate root for macro expansion
 pub use stylus_sdk::alloy_primitives;
 
@@ -50,7 +53,7 @@ sol_storage! {
     }
 }
 
-#[public]
+#[stylus_sdk::stylus_proc::public]
 impl ArbiProofSimulator {
     pub fn constructor(&mut self) {
         // No initialization needed

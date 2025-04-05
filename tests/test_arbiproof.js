@@ -1,5 +1,5 @@
-const { ethers } = require('ethers');
-const fs = require('fs');
+import { ethers } from 'ethers';
+import fs from 'fs';
 
 // Contract details
 const CONTRACT_ADDRESS = '0xaad921b9c96d7afc3398895b371a77e2e1f34c5c';
@@ -20,18 +20,18 @@ async function main() {
     console.log("==============================");
     console.log(`Testing contract at: ${CONTRACT_ADDRESS}`);
     
-    // Connect to Arbitrum Sepolia
-    const provider = new ethers.providers.JsonRpcProvider('https://sepolia-rollup.arbitrum.io/rpc');
+    // Connect to Arbitrum Sepolia - Updated for ethers.js v6
+    const provider = new ethers.JsonRpcProvider('https://sepolia-rollup.arbitrum.io/rpc');
     
     // Read wallet from private key
     let wallet;
     try {
-      const privateKey = fs.readFileSync('./private_key.txt', 'utf8').trim();
+      const privateKey = fs.readFileSync('../private_key.txt', 'utf8').trim();
       wallet = new ethers.Wallet(privateKey, provider);
       console.log(`Connected with wallet: ${wallet.address}`);
     } catch (err) {
       console.error("Error loading wallet:", err.message);
-      console.error("Please ensure private_key.txt exists in the current directory");
+      console.error("Please ensure private_key.txt exists in the parent directory");
       process.exit(1);
     }
     
@@ -65,9 +65,8 @@ async function main() {
         console.log(`${operations[i]} | ${stylusCosts[i].toString()} | ${solidityCosts[i].toString()} | ${savings[i].toString()}%`);
       }
       
-      // Calculate average savings
-      const avgSavings = savings.reduce((a, b) => a.add(b), ethers.BigNumber.from(0))
-                               .div(ethers.BigNumber.from(savings.length));
+      // Calculate average savings - Updated for ethers.js v6
+      const avgSavings = savings.reduce((a, b) => a + BigInt(b), BigInt(0)) / BigInt(savings.length);
       console.log(`\nAverage Gas Savings: ${avgSavings.toString()}%`);
       
     } catch (err) {
