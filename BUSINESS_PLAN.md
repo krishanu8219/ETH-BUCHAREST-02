@@ -2,127 +2,91 @@
 
 ## Executive Summary
 
-ArbiProof is a gas-optimized fraud proof system built on Arbitrum Stylus that enables secure, cost-effective dispute resolution for optimistic rollups and layer 2 solutions. By leveraging Rust's performance advantages through Stylus, ArbiProof delivers up to 70% gas savings compared to Solidity implementations, making complex dispute resolution economically viable.
+ArbiProof is a gas-efficiency simulation dashboard and smart contract suite built on Arbitrum Stylus. It demonstrates the significant gas savings achievable when using Rust-based Stylus contracts compared to traditional Solidity implementations.
 
-## Problem Statement
+## Product Overview
 
-1. **Cost Barrier**: Traditional fraud proof systems on Ethereum are prohibitively expensive, with simple disputes costing upwards of $100 in gas fees.
-   
-2. **Technical Complexity**: Implementing secure fraud proof systems is challenging, with many Layer 2 projects struggling to create reliable verification mechanisms.
+### ArbiProof Gas-Efficiency Simulator Dashboard on Arbitrum Stylus
 
-3. **Scalability Bottlenecks**: As L2 adoption grows, efficient dispute resolution becomes critical for maintaining network integrity and user trust.
+ArbiProof is a solution for gas-efficient fraud proofs on Arbitrum Stylus. It compares gas usage across Stylus and Solidity implementations.
 
-4. **Interoperability Challenges**: Existing solutions often create walled gardens with limited integration capabilities.
+### What is ArbiProof?
 
-## Solution - ArbiProof
+ArbiProof is a simulation dashboard and smart contract suite. It shows how Arbitrum Stylus reduces gas costs for fraud proofs, cryptographic operations, and supply chain verification. It includes a deployed Stylus contract on Arbitrum Sepolia.
 
-ArbiProof is a comprehensive fraud proof system that leverages Arbitrum Stylus to deliver:
+### Why ArbiProof? (Market Problem)
 
-1. **70%+ Gas Savings**: Our benchmarks demonstrate significant gas savings across all operations, from dispute initiation (50% savings) to complex cryptographic verifications (85% savings).
+- **Fraud Proofs are costly**: Solidity-based proofs are gas-intensive
+- **High Barriers to Entry**: Complex protocols are hard to understand and test
+- **No Visual Benchmarking Tools**: Developers lack real-time dashboards
+- **Expensive On-chain Verification**: Gas costs inhibit innovation
 
-2. **Enterprise-Grade Security**: Built with Rust's memory safety guarantees and leveraging battle-tested cryptographic libraries.
+## Technical Features
 
-3. **Seamless Integration**: Full EVM compatibility allows ArbiProof to integrate with existing smart contract infrastructure.
+### Stylus vs Solidity - Benchmarking Dashboard
 
-4. **Expandable Framework**: Modular design supports various verification types from simple state transitions to complex ZK-proof validations.
+- Live comparison of gas usage (Stylus vs Solidity)
+- Benchmarks for:
+  - ZK verification (Matrix ops)
+  - State transitions
+  - Hashing
+  - Supply chain validation
+- Historical trends of gas efficiency
+- **75% Gas Savings** in all categories
 
-## Market Opportunity
+### What's Under the Hood?
 
-### Target Market
-- Primary: Layer 2 protocols requiring efficient fraud proof systems
-- Secondary: DeFi protocols requiring secure transaction verification
-- Tertiary: Enterprise blockchain solutions requiring efficient verification systems
+- **Rust for Stylus**: Core logic written in Rust
+- **WASM Execution**: Compiled to WebAssembly
+- **Stylus Runtime**: Uses Arbitrum's runtime
+- **Dispute System**: Built-in staking, bisection
+- **ZK Verification Simulation**: Runs cryptographic matrix operations
+- **Benchmarking Functions**: Measure gas used
+- **Supply Chain Validation**: Validates product checkpoints
+- **Interoperability**: Acts as a computational engine
 
-### Market Size
-- **Layer 2 TVL**: Currently over $10B across Arbitrum, Optimism, and other rollups
-- **Annual Growth Rate**: 150%+ YoY for L2 ecosystem
-- **Addressable Market**: $50M+ annually for verification services
+## Market Application
+
+### Real-World Use Cases
+
+- Fraud Proofs for Layer 2s
+- ZK Verification at lower costs
+- Supply Chain Tracking
+- DeFi Risk Modelling
+- Cross-chain Messaging & Oracles
 
 ## Business Model
 
 ### Revenue Streams
 
-1. **Subscription Model (SaaS)**
-   - Basic Tier: $99/month - Up to 50 dispute verifications
-   - Premium Tier: $499/month - Up to 300 dispute verifications with priority processing
-   - Enterprise Tier: $2,499/month - Unlimited verifications with dedicated support
+**Dashboard Tiers**
+- Free
+- Dev: $50/mo
+- Enterprise: $500/mo
 
-2. **Transaction-Based Pricing**
-   - Pay-per-verification model at $0.50 per simple verification
-   - Complex verification pricing starting at $2.00 per operation
-   - Volume discounts for high-frequency users
+**Protocol Integration**
+- $5K-$50K setup + 0.5% rev share
 
-3. **Licensing Model**
-   - White-label licensing for Layer 2 protocols at $20,000/year
-   - Custom implementation services starting at $50,000
+**Consulting**
+- $250/hr, custom dev $10K+
 
-## Go-to-Market Strategy
+### Competitive Edge
 
-1. **Developer Education**
-   - Comprehensive documentation and examples
-   - Regular workshops and webinars
-   - Open-source reference implementations
+- **75%+ cheaper operations** vs Solidity
+- Handles ZK and cryptographic ops inside the EVM
+- Stylus + Rust = High performance + safety
+- Only product offering live benchmarking for devs
 
-2. **Strategic Partnerships**
-   - Integration with major L2 protocols
-   - Partnerships with blockchain development firms
-   - Collaborations with audit firms
+### Roadmap
 
-3. **Community Building**
-   - Developer grants program
-   - Regular hackathons focused on fraud proof innovations
-   - Active Discord and forum presence
+1. **Now**: Proof of Concept on Sepolia
+2. **3 Months**: Launch beta dashboard, release JS SDK, onboard 5 paying users
+3. **6 Months**: Launch certification, integrate with more L2s, $10K MRR target
 
-## Competitive Analysis
+## Team & Resources
 
-| Feature | ArbiProof | Traditional Solidity Solutions | ZK-Based Alternatives |
-|---------|----------|-------------------------------|------------------------|
-| Gas Efficiency | Very High (70%+ savings) | Low | Medium |
-| Verification Complexity | High | Medium | Very High |
-| EVM Compatibility | Complete | Native | Limited |
-| Implementation Ease | Medium | High | Low |
-| Security Level | Very High | Medium | Very High |
+[Your team information here]
 
-## Roadmap
+## Contact Information
 
-**Q2 2024**
-- Launch basic version with core functionality
-- Secure first 3 pilot customers
-- Establish developer community
-
-**Q3 2024**
-- Expand support for complex verification types
-- Launch enterprise subscription tier
-- Add ZK-proof verification optimization
-
-**Q4 2024**
-- Reach $10,000 MRR
-- Integrate with 5+ major L2 protocols
-- Launch ArbiProof SDK
-
-**Q1 2025**
-- Expand to additional EVM-compatible chains
-- Launch ArbiProof Marketplace for verification providers
-- Target $50,000 MRR
-
-## Financial Projections
-
-### Year 1
-- Revenue: $240,000
-- Customers: 20
-- Burn Rate: $30,000/month
-- Runway: 8 months
-
-### Year 2
-- Revenue: $1.2M
-- Customers: 75
-- Profit Margin: 15%
-
-### Year 3
-- Revenue: $5M
-- Customers: 250
-- Profit Margin: 30%
-
-## Conclusion
-
-ArbiProof represents a paradigm shift in blockchain dispute resolution, making fraud proofs economically viable through Stylus's gas optimizations. By reducing costs by up to 70% and enabling more complex verification logic, ArbiProof will accelerate the adoption of optimistic rollups and strengthen the entire Layer 2 ecosystem.
+[Your contact information here]
