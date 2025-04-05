@@ -1,5 +1,8 @@
 import { ethers } from 'ethers';
 
+// Update the CONTRACT_ADDRESS constant with your deployed address
+const CONTRACT_ADDRESS = '0x8f645e59e8b2e8c046bc733d2b85398845e98aaa';
+
 export const ARBIPROOF_SIMULATOR_ABI = [
   {
     "inputs": [],
